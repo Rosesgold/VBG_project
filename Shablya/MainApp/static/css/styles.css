@@ -61,7 +61,6 @@ header a {
 
 .first-part {
     width: 20%;
-    /*float: left;*/
     background-color: #ffebcd;
 }
 
@@ -94,14 +93,6 @@ header a {
     top: 0;
 }
 
-/*.second-part {
-    width: 80%;
-    background-color: #ffebcd;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}*/
-
 .second-part {
     width: 80%;
     overflow-y: auto; /* Прокручування по вертикалі */
@@ -117,15 +108,39 @@ header a {
 }
 
 .card {
-    width: calc(25% - 10px); /* Розраховуємо ширину для 4 карточок в ряду з відступами */
+    width: calc(20% - 10px); /* Розраховуємо ширину для 4 карточок в ряду з відступами */
     height: 45%; /* Встановлюємо фіксовану висоту для карточки */
     margin-top: 15px;
     margin-bottom: 10px;
-    padding: 10px;
     border-radius: 5%;
     background-color: #f0f0f0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-card {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #556b2f;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+
+.middle-card {
+    height: 65%;
+    background-color: #ffebcd;
+}
+
+.bottom-card {
+    height: 20%;
+    background-color: #556b2f;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
 }
 
 footer{

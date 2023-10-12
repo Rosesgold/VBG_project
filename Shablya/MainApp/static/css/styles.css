@@ -166,6 +166,14 @@ header a {
     display: inline-block;
 }
 
+.save-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
 .like-icon,
 .liked-icon {
     width: 100%;
@@ -173,7 +181,22 @@ header a {
     transition: filter 0.3s;
 }
 
-.liked-icon {
+.save-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.save-icon,
+.saved-icon {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s;
+}
+
+.hidden {
     display: none;
 }
 

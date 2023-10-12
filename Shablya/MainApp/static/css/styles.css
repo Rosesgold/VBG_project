@@ -166,14 +166,6 @@ header a {
     display: inline-block;
 }
 
-.save-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: inline-block;
-}
-
 .like-icon,
 .liked-icon {
     width: 100%;
@@ -199,7 +191,6 @@ header a {
 .hidden {
     display: none;
 }
-
 
 footer{
     width: 100%;

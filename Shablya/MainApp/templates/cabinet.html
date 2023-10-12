@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cabinet</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cabinet.css' %}">
+    <script src="{% static 'js/cabinet.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="display: flex; align-items: center;">
+                <img src="{% static 'images/emblema.png' %}" alt="Логотип" style="width: 60px; height: 60px;">
+                <a href="{% url 'mainpage' %}" style="margin-left: 10px; text-decoration: underline;"><h1>Шабля</h1></a>
+            </div>
+            <div>
+                <span>Головна</span>
+                <span>Пошук</span>
+                <span>Про нас</span>
+            </div>
+            <div>
+                <a href="{% url 'cabinet' %}" style="text-decoration: none;">Особистий кабінет користувача</a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="registration-form">
+                <div class="signup-signin-part">
+                    <button class="sign-up-button"><h3>Sign up</h3></button>
+                    <button class="sign-in-button"><h3>Sign in</h3></button>
+                </div>
+                <div class="data-part">
+                    <form class="login-form">
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="password" placeholder="Password" name="password">
+                    </form>
+                </div>
+                <div class="create-account-part">
+                    <button class="create-account-button"><h2>Create account</h2></button>
+                </div>
+            </div>
+            <script>
+                // Отримуємо посилання на елементи кнопок
+                const createAccountButton = document.querySelector(".create-account-button");
+                const signInButton = document.querySelector(".sign-in-button");
+                const signUpButton = document.querySelector(".sign-up-button");
+
+                // Зберігаємо оригінальний текст кнопки "create-account-button"
+                const originalCreateAccountText = createAccountButton.innerHTML;
+
+                // Додаємо обробники подій для кнопок "sign-in-button" і "sign-up-button"
+                signInButton.addEventListener("click", function() {
+                    createAccountButton.innerHTML = "<h2>Enter to account</h2>";
+                });
+
+                signUpButton.addEventListener("click", function() {
+                    createAccountButton.innerHTML = "<h2>Create account</h2>";
+                });
+            </script>
+        </div>
+        <footer>
+            <!-- Футер -->
+        </footer>
+    </div>
+</body>
+</html>

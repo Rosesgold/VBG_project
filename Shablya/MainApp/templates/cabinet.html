@@ -11,21 +11,9 @@
     <script src="{% static 'js/cabinet.js' %}"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div style="display: flex; align-items: center;">
-                <img src="{% static 'images/emblema.png' %}" alt="Логотип" style="width: 60px; height: 60px;">
-                <a href="{% url 'mainpage' %}" style="margin-left: 10px; text-decoration: underline;"><h1>Шабля</h1></a>
-            </div>
-            <div>
-                <a href="{% url 'mainpage' %}" style="color: white; font-size: 24px; margin-right: 70px;">Головна</a>
-                <a href="{% url 'search' %}" style="color: white; font-size: 24px; margin-right: 70px;">Пошук</a>
-                <a href="{% url 'aboutus' %}" style="color: white; font-size: 24px; margin-right: 70px;">Про нас</a>
-            </div>
-            <div>
-                <a href="{% url 'cabinet' %}" style="text-decoration: none;">Особистий кабінет користувача</a>
-            </div>
-        </header>
+    <!--{% block content %}-->
+        <div class="container">
+        {% include 'header.html' %}
         <div class="content">
             <div class="registration-form">
                 <div class="signup-signin-part">
@@ -33,13 +21,13 @@
                     <button class="sign-in-button"><h3>Sign in</h3></button>
                 </div>
                 <div class="data-part">
-                    <form class="login-form">
-                        <input type="text" placeholder="Username" name="username">
-                        <input type="password" placeholder="Password" name="password">
+                    <form class="login-form" method="post">
+                        {% csrf_token %}
+                        <!--{{ form.as_p }}-->
+                        <input type="text" placeholder="Login" name="username" required>
+                        <input type="password" placeholder="Password" name="password" required>
+                        <button class="create-account-button" type="submit"><h2>Create account</h2></button>
                     </form>
-                </div>
-                <div class="create-account-part">
-                    <button class="create-account-button"><h2>Create account</h2></button>
                 </div>
             </div>
             <script>
@@ -62,8 +50,9 @@
             </script>
         </div>
         <footer>
-            <!-- Футер -->
+            {% include 'footer.html' %}
         </footer>
     </div>
+    <!--{% endblock %}-->
 </body>
 </html>

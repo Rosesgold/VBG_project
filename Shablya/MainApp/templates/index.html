@@ -12,20 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div style="display: flex; align-items: center;">
-                <img src="{% static 'images/emblema.png' %}" alt="Логотип" style="width: 60px; height: 60px;">
-                <a href="{% url 'mainpage' %}" style="margin-left: 10px; text-decoration: underline;"><h1>Шабля</h1></a>
-            </div>
-            <div>
-                <a href="{% url 'mainpage' %}" style="color: white; font-size: 24px; margin-right: 70px;">Головна</a>
-                <a href="{% url 'search' %}" style="color: white; font-size: 24px; margin-right: 70px;">Пошук</a>
-                <a href="{% url 'aboutus' %}" style="color: white; font-size: 24px; margin-right: 70px;">Про нас</a>
-            </div>
-            <div>
-                <a href="{% url 'cabinet' %}" style="text-decoration: none;">Особистий кабінет користувача</a>
-            </div>
-        </header>
+        {% include 'header.html' %}
         <div class="spacer">
             <a href="#">#українське</a>
             <a href="#">#війна2022</a>
@@ -546,9 +533,7 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <!-- Футер -->
-        </footer>
+        {% include 'footer.html' %}
     </div>
 </body>
 </html>

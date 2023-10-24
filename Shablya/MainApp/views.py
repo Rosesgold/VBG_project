@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from .models import User
 
 
 def index_page(request):
@@ -6,6 +7,13 @@ def index_page(request):
 
 
 def cabinet_page(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = User(login=username, password=password)
+        user.save()  # Зберігаємо користувача в базі даних
+        return redirect(reverse('mainpage'))  # Перенаправляємо на іншу сторінку
+
     return render(request, "cabinet.html")
 
 

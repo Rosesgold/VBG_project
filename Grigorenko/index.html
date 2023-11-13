@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shablya</title>
-    <style>
-      body 
-      {
-        background: #dbd953;
-      }      
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shablya</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/searching.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
-  
-<header>
-  <h1>Шабля</h1>
-<div>
-  <ul>
-    <li>
-      <a href="">Головна</a>
-    </li>
-    <li><a href="">Про нас</a></li>
-    <li><a href=""><sup>Особистий кабінет</sup></a></li>
-  </ul>
-</div>
-<div>
-  <hr color="black">
-  <h2>#війна #українське #техніка #зброя</h2>
-  <hr color="black">
-</div>
-</header>
-<section>
-  <form action="poshuk">
-    <button type="button">Пошук</button>
-    <input type="text" placeholder="шо шукаєш?" id="text">
-    <button type="reset">стерти</button>
+    <div class="container">
+        {% include 'header.html' %}
+        <div class="content-searching">
+            <div class="first-part">
+                <button onclick="createCards(5)">Відфільтруванти</button>
+            </div>
+            <div class="divider"></div>
+            <div class="second-part">
+                <div class="wrapper-second-part">
 
-  </form>
-</section>
-<section>
-  <table>
-    <tr>
-      <th>Танк</th>
-      <th>Літак</th>
-      <th>Гвинтівка</th>
-    </tr>
-    <td>
-      <tl><img src="./photo_2023-09-20_20-21-21.jpg" alt="картка" width = "200px" /></tl>
-      <tl><img src="./photo_2023-09-20_20-21-21.jpg" alt="картка" width = "200px" /></tl>
-      <tl><img src="./photo_2023-09-20_20-21-21.jpg" alt="картка" width = "200px" /></tl>
-    </td>
-    <td>
-      <tl><button>лайк</button> <button>зберегти</button> <button>детальніше</button>
-      </tl>
-      <tl><button>лайк</button> <button>зберегти</button> <button>детальніше</button></tl>
-      <tl><button>лайк</button> <button>зберегти</button> <button>детальніше</button></tl>
-    </td>
-  </table>
-</section>
+                </div>
+            </div>
+        </div>
+        {% include 'footer.html' %}
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shablya</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/searching.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+        <div class="content-searching">
+            <div class="first-part">
+                <!-- мені потрібно змінити параметр (з 5 на інше число, яке буде залежити від запиту )-->
+                <button onclick="createCards(5)">Відфільтруванти</button>
+            </div>
+            <div class="divider"></div>
+            <div class="second-part">
+                <div class="wrapper-second-part">
+
+                </div>
+            </div>
+        </div>
+        {% include 'footer.html' %}
+    </div>
+
+</body>
+</html>

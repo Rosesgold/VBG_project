@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ data_from_db.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="part1">
+            <img src="{% static data_from_db.img_path %}" alt="Логотип">
+            <div class="text-column">
+                <div>
+                    <div class="info-block">Назва: <span class="info-text">{{ data_from_db.title }}</span></div>
+                </div>
+                <div>
+                    <div class="info-block">Країна: <span class="info-text">{{ data_from_db.country }}</span></div>
+                </div>
+                <div>
+                    <div class="info-block">Тип: <span class="info-text">{{ data_from_db.type }}</span></div>
+                </div>
+                <div>
+                    <div class="info-block">Рік: <span class="info-text">{{ data_from_db.date_of_creating }}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="part2">{{ data_from_db.text }}</div>
+        <div class="part3">Додаткове джерело інформації: <span><a href="{{ data_from_db.href }}">{{ data_from_db.href }}</a></span></div>
+    </div>
+</body>
+</html>

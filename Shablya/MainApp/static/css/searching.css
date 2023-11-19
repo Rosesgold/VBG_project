@@ -66,10 +66,28 @@ header a {
     background-color: #ffebcd;
 }
 
-.search-box {
-    padding: 5px;
-    text-align: center;
+.filter-button {
+    display: flex;
+    margin-top: 100%;
+    margin-left: 150%;
 }
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Додатковий відступ між текстом та чекбоксом */
+    white-space: nowrap; /* Забороняє перенесення тексту на новий рядок */
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
 
 .divider {
     width: 1px;

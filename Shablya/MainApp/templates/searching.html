@@ -16,7 +16,37 @@
         <div class="content-searching">
             <div class="first-part">
                 <!-- мені потрібно змінити параметр (з 5 на інше число, яке буде залежити від запиту )-->
-                <button onclick="createCards(5)">Відфільтруванти</button>
+                <div class="first-part">
+                    <div class="checkboxes">
+                        <label for="checkbox1">
+                            <span>Новітній час</span>
+                            <input type="checkbox" id="checkbox1" name="timePeriod" value="Новітній час">
+                        </label>
+                        <label for="checkbox2">
+                            <span>Новий час</span>
+                            <input type="checkbox" id="checkbox2" name="timePeriod" value="Новий час">
+                        </label>
+                        <label for="checkbox3">
+                            <span>Ранній новий час</span>
+                            <input type="checkbox" id="checkbox3" name="timePeriod" value="Ранній новий час">
+                        </label>
+                        <label for="checkbox4">
+                            <span>Середньовіччя</span>
+                            <input type="checkbox" id="checkbox4" name="timePeriod" value="Середньовіччя">
+                        </label>
+                        <label for="checkbox5">
+                            <span>Античність</span>
+                            <input type="checkbox" id="checkbox5" name="timePeriod" value="Античність">
+                        </label>
+                        <label for="checkbox6">
+                            <span>Доісторичні часи</span>
+                            <input type="checkbox" id="checkbox6" name="timePeriod" value="Доісторичні часи">
+                        </label>
+                    </div>
+                    <button class="filter-button">Відфільтрувати</button>
+<!--                    <button class="filter-button" onclick="createCards(5)">Відфільтруванти</button>-->
+
+                </div>
             </div>
             <div class="divider"></div>
             <div class="second-part">

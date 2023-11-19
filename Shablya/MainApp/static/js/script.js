@@ -13,6 +13,45 @@ function toggleSave(button) {
     savedIcon.classList.toggle('hidden');
 }
 
+function openNewWindow(url) {
+    var width = 700;
+    var height = 800;
+
+    // Отримуємо розмір екрану
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    // Розрахунок координат для центру екрану
+    var left = (screenWidth - width) / 2;
+    var top = (screenHeight - height) / 2;
+
+    // Відкриваємо нове вікно з центральним положенням
+    window.open(url, "_blank", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var filterButton = document.querySelector('.filter-button');
+
+    filterButton.addEventListener('click', function() {
+        fetch('/get_card_count_by_periods/', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Отримано значення count:', data.count);
+            createCards(data.count);
+        })
+        .catch(error => {
+            console.error('Помилка:', error);
+        });
+    });
+});
+
+
+
 function createCards(cardCount) {
     var wrapper = document.querySelector('.wrapper-second-part');
 
@@ -101,6 +140,16 @@ function createCards(cardCount) {
         wrapper.appendChild(card);
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

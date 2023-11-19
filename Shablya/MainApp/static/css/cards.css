@@ -1,0 +1,73 @@
+/* styles.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.part1 {
+    flex: 20%;
+    display: flex;
+    background-color: #e0e0e0;
+    align-items: center;
+}
+
+.part1 img {
+    width: 35%;
+    height: 100%;
+    object-fit: cover; /* Зображення буде розтягнуте або стиснуте так, щоб воно повністю заповнювало блок, зберігаючи пропорції */
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.part1 .text-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.part1 .text-column div {
+    height: 25%;
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    margin-left: 20px;
+    font-weight: bold; /* Налаштовуйте стиль тексту за потребою */
+}
+
+.part2 {
+    flex: 70%;
+    background-color: #f0f0f0;
+    padding-top: 15%;
+    text-align: center;
+    font-size: 1.2em; /* Збільшення розміру шрифту */
+    line-height: 2; /* Встановлення відступів між рядками */
+}
+
+.part3 {
+    display: flex;
+    font-size: 1.2em;
+    padding-left: 5%;
+    flex: 10%;
+    align-items: center;
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+.part3 span {
+    margin-left: 5%;
+}
